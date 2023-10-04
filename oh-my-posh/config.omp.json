@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+		{
+          "foreground": "#0377c8",
+          "style": "plain",
+          "template": "{{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": "in ",
+          "type": "text"
+        },
+        {
+          "foreground": "#87ff00",
+          "properties": {
+            "style": "full"
+          },
+          "style": "plain",
+          "template": "{{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#b8b80a",
+          "properties": {
+            "branch_ahead_icon": "\u2191",
+            "branch_behind_icon": "\u2193",
+            "branch_gone": "\u2262",
+            "branch_icon": "\ue0a0 ",
+            "branch_identical_icon": "\u2261",
+            "cherry_pick_icon": "\u2713 ",
+            "commit_icon": "\u25b7 ",
+            "fetch_status": true,
+            "merge_icon": "\u25f4 ",
+            "no_commits_icon": "[no commits]",
+            "rebase_icon": "\u2c62 ",
+            "tag_icon": "\u25b6 "
+          },
+          "style": "plain",
+          "template": "<#ffffff>on</> {{ .HEAD }}{{ if .Staging.Changed }}<#87FF00> \u25cf {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#D75F00> \u25cf {{ .Working.String }}</>{{ end }} ",
+          "type": "git"
+        }
+	  ],
+	  "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#666666",
+          "style": "plain",
+          "template": " \uf64f {{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+	{
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#d75f00",
+          "style": "plain",
+          "template": "\u279c ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}
